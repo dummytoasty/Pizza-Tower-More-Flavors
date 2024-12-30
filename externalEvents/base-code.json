@@ -1,0 +1,594 @@
+{
+  "associatedLayout": "Test",
+  "name": "Base code",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetWindowSize"
+          },
+          "parameters": [
+            "",
+            "960",
+            "540",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CenterWindow"
+          },
+          "parameters": [
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetDefaultTranslationAmplitude"
+          },
+          "parameters": [
+            "",
+            "2",
+            "2",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakingFrequency"
+          },
+          "parameters": [
+            "",
+            "60",
+            "\"Tile Map\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakingFrequency"
+          },
+          "parameters": [
+            "",
+            "60",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakingFrequency"
+          },
+          "parameters": [
+            "",
+            "60",
+            "\"PlayerClothesPattern\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakable"
+          },
+          "parameters": [
+            "",
+            "",
+            "\"Tile Map\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakable"
+          },
+          "parameters": [
+            "",
+            "",
+            "\"PlayerClothesPattern\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "CameraShake::SetLayerShakable"
+          },
+          "parameters": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "DebuggerTools::EnableDebugDraw"
+          },
+          "parameters": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color1\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color2\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color3\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color4\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color5\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "player",
+            "Effect",
+            "\"Color6\"",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Debug",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "F5"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "isConsoleActivated",
+                "Toggle",
+                "="
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "isConsoleActivated",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "ConsoleBG",
+                "0",
+                "0",
+                "\"HUD\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "ConsoleBG",
+                "Resizable",
+                "960",
+                "153"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "isUnfocused",
+                "True",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "isConsoleActivated",
+                "=",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "ConsoleBG",
+                "consolebg"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "isUnfocused",
+                "False",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Debug",
+                "True",
+                "="
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "solid",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "slope",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "platform",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PlayerState",
+                "0",
+                "0",
+                "\"HUD\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PlayerHorizontalSpeed",
+                "0",
+                "32",
+                "\"HUD\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PlayerVerticalSpeed",
+                "0",
+                "64",
+                "\"HUD\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Debug",
+                "False",
+                "="
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "solid"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "slope"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "platform"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "PlayerState",
+                "consolebg"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "PlayerHorizontalSpeed",
+                "consolebg"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "PlayerVerticalSpeed",
+                "consolebg"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Visible"
+              },
+              "parameters": [
+                "player"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Debug",
+                "True",
+                "="
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerState",
+                "Text",
+                "=",
+                "player.Character + \".\" + player.State"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerHorizontalSpeed",
+                "Text",
+                "=",
+                "\"hspeed: \" + ToString(player.hSpeed)"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerVerticalSpeed",
+                "Text",
+                "=",
+                "\"vspeed: \" + ToString(round((player.PlatformerObject::CurrentFallSpeed()-player.PlatformerObject::CurrentJumpSpeed())/60))"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "player",
+                    "isPaused",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "Text",
+                    "=",
+                    "player.Character + \".\" + player.State + \" (no input)\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  ]
+}

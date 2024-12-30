@@ -1,0 +1,427 @@
+{
+  "associatedLayout": "Test",
+  "name": "startgate",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AnimatableCapability::AnimatableBehavior::PauseAnimation"
+          },
+          "parameters": [
+            "startgate",
+            "Animation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Visible"
+          },
+          "parameters": [
+            "player"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "startgate",
+            "isLevelStarted",
+            "True",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BooleanObjectVariable"
+          },
+          "parameters": [
+            "startgate",
+            "isLevelStarted",
+            "False",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "player",
+            "startgate.CenterX()-50",
+            "startgate.BoundingBoxBottom()-96",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "player",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "player",
+            "isPaused",
+            "True",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "player",
+            "isUnfocused",
+            "True",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangeSprite"
+          },
+          "parameters": [
+            "startgate",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetStringObjectVariable"
+          },
+          "parameters": [
+            "player",
+            "State",
+            "=",
+            "\"levelstart\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "Character",
+                "=",
+                "\"peppino\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "player",
+                "Animation",
+                "=",
+                "\"spr_player_walkfront\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "Character",
+                "=",
+                "\"noise\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "player",
+                "Animation",
+                "=",
+                "\"spr_playerN_walkfront\""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "StringObjectVariable"
+          },
+          "parameters": [
+            "player",
+            "State",
+            "=",
+            "\"levelstart\""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_player_walkfront\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_playerN_walkfront\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "player",
+                "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangeSprite"
+              },
+              "parameters": [
+                "startgate",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "sfx_groundpound.wav",
+                "201",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::ShakeCamera"
+              },
+              "parameters": [
+                "",
+                "1.5",
+                "0",
+                "0",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "player",
+                    "Character",
+                    "=",
+                    "\"peppino\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_player_timesup\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "player",
+                    "Character",
+                    "=",
+                    "\"noise\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_playerN_timesup\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_player_timesup\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                  },
+                  "parameters": [
+                    "player",
+                    "Animation",
+                    "=",
+                    "\"spr_playerN_timesup\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "player",
+                "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "isUnfocused",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "player",
+                "isPaused",
+                "False",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

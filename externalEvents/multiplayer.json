@@ -1,0 +1,158 @@
+{
+  "associatedLayout": "Test",
+  "name": "Multiplayer",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "PlayerAuthentication::IsPlayerAuthenticated"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PlayerAuthentication::OpenAuthenticationWindow"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PlayerAuthentication::IsPlayerAuthenticated"
+          },
+          "parameters": []
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "Multiplayer::IsLobbyGameRunning"
+          },
+          "parameters": []
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Multiplayer::OpenGameLobbies"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Multiplayer::HasLobbyGameJustStarted"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Scene"
+          },
+          "parameters": [
+            "",
+            "\"Test\"",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Multiplayer::IsLobbyGameRunning"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Multiplayer::MultiplayerObjectBehavior::SetPlayerObjectOwnership"
+              },
+              "parameters": [
+                "player",
+                "MultiplayerObject",
+                "=",
+                "Multiplayer::CurrentPlayerNumber()"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "Multiplayer::MultiplayerObjectBehavior::IsObjectOwnedByCurrentPlayer"
+          },
+          "parameters": [
+            "player",
+            "MultiplayerObject"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "player",
+            "PlatformerObject",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}
