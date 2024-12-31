@@ -1,5 +1,9 @@
 # Liste des fonctionnalités:
 
+- Choix entre Peppino et The Noise
+
+- Chaques frames des personnages sont recolorées pour une plus grande personnalisation des costumes
+
 - Mouvement de base:
   
   - Bouger de gauche à droite (Q et D)
@@ -13,7 +17,11 @@
 
   - Empoigne normale et en l'air
   - Annulation d'empoigne
-  - Choc contre un mur 
+  - Choc contre un mur
+
+- Uppercut (Z et Fléche de gauche)
+
+  - Annulation par empoigne
 
 - Moquerie (taunt, Fléche du bas)
 
