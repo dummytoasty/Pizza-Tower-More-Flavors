@@ -2002,7 +2002,7 @@
                       },
                       "parameters": [
                         "ClothesPattern",
-                        "\"PlayerClothesPattern\""
+                        "\"Clothes Pattern\""
                       ]
                     },
                     {

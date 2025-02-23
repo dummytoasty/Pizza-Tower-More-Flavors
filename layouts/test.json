@@ -527,354 +527,6 @@
         "characterSize": 15,
         "color": "255;255;255"
       }
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "TauntEffect",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "spr_taunteffect",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.05,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_0.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "spr_taunteffect_8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 31,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 48
-                      },
-                      {
-                        "x": 109,
-                        "y": 125
-                      },
-                      {
-                        "x": 31,
-                        "y": 125
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "objectsFolderStructure": {
@@ -894,9 +546,6 @@
       },
       {
         "objectName": "ConsoleStart"
-      },
-      {
-        "objectName": "TauntEffect"
       }
     ]
   },
@@ -906,14 +555,14 @@
       "include": {
         "includeConfig": 0
       },
-      "target": "Base code"
+      "target": "player"
     },
     {
       "type": "BuiltinCommonInstructions::Link",
       "include": {
         "includeConfig": 0
       },
-      "target": "player"
+      "target": "Base code"
     },
     {
       "type": "BuiltinCommonInstructions::Link",
@@ -1007,7 +656,7 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "PlayerClothesPattern",
+      "name": "Clothes Pattern",
       "renderingType": "",
       "visibility": true,
       "cameras": [],
@@ -1072,10 +721,6 @@
     {
       "name": "Platform",
       "type": "PlatformBehavior::PlatformBehavior"
-    },
-    {
-      "name": "PlatformerObject",
-      "type": "PlatformBehavior::PlatformerObjectBehavior"
     },
     {
       "name": "Resizable",

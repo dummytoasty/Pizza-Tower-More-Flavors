@@ -9,7 +9,7 @@
   "title": "",
   "v": 209,
   "uiSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,8 +17,8 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.7291666666666666,
+    "snap": true,
+    "zoomFactor": 0.6385789179380327,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -28,15 +28,15 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 64,
+      "height": 128,
       "keepRatio": true,
       "layer": "",
       "name": "solid",
       "persistentUuid": "02f0d3df-290e-4747-b18d-7577d0a7b08c",
-      "width": 960,
-      "x": 0,
+      "width": 1984,
+      "x": -512,
       "y": 480,
-      "zOrder": 1,
+      "zOrder": -10,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -47,12 +47,149 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "player",
-      "persistentUuid": "3be40189-2590-4161-b988-716024a2bc29",
+      "name": "startgate",
+      "persistentUuid": "f0c5c6b9-8868-4bdb-bb8e-8335cc0f0780",
       "width": 0,
-      "x": 416,
-      "y": 352,
-      "zOrder": 2,
+      "x": 384,
+      "y": 224,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 192,
+      "keepRatio": true,
+      "layer": "",
+      "name": "solid",
+      "persistentUuid": "38f76e59-b008-41eb-aa33-e3b7be322494",
+      "width": 64,
+      "x": -448,
+      "y": 256,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "platform",
+      "persistentUuid": "7bc5d1b3-0115-4b0c-be24-79be35db55de",
+      "width": 96,
+      "x": -384,
+      "y": 384,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "",
+      "name": "slope",
+      "persistentUuid": "9b7d841f-317c-4e1e-b603-d246d07cf5e2",
+      "width": 96,
+      "x": 960,
+      "y": 384,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 192,
+      "keepRatio": true,
+      "layer": "",
+      "name": "slope",
+      "persistentUuid": "450737f6-aa84-482e-ad47-c08911a10206",
+      "width": 64,
+      "x": 1152,
+      "y": 288,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "flippedX": true,
+      "height": 192,
+      "keepRatio": true,
+      "layer": "",
+      "name": "slope",
+      "persistentUuid": "6c5fbd19-7cb1-4377-abf4-5eea7d48705a",
+      "width": 64,
+      "x": 1280,
+      "y": 288,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "platform",
+      "persistentUuid": "0f2eadc3-d3bb-41d3-9b39-2fed2e7c68c5",
+      "width": 96,
+      "x": -192,
+      "y": 416,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "platform",
+      "persistentUuid": "60a8940b-95fc-4408-acb4-88e9898230eb",
+      "width": 96,
+      "x": -192,
+      "y": 320,
+      "zOrder": -10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 192,
+      "keepRatio": true,
+      "layer": "",
+      "name": "solid",
+      "persistentUuid": "fc6e70d0-4e91-432d-8624-66544ad11549",
+      "width": 64,
+      "x": 1216,
+      "y": 288,
+      "zOrder": -9,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -62,7 +199,29 @@
   "objectsFolderStructure": {
     "folderName": "__ROOT"
   },
-  "events": [],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "player"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Base code"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "startgate"
+    }
+  ],
   "layers": [
     {
       "ambientLightColorB": 200,
@@ -107,6 +266,39 @@
           "booleanParameters": {}
         }
       ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "HUD",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
     }
   ],
   "behaviorsSharedData": [
@@ -133,10 +325,6 @@
     {
       "name": "Platform",
       "type": "PlatformBehavior::PlatformBehavior"
-    },
-    {
-      "name": "PlatformerObject",
-      "type": "PlatformBehavior::PlatformerObjectBehavior"
     },
     {
       "name": "Resizable",

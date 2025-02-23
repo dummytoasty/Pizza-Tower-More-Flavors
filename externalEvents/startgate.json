@@ -107,7 +107,7 @@
           },
           "parameters": [
             "player",
-            "isUnfocused",
+            "isFrozen",
             "True",
             ""
           ]
@@ -403,7 +403,7 @@
               },
               "parameters": [
                 "player",
-                "isUnfocused",
+                "isFrozen",
                 "False",
                 ""
               ]

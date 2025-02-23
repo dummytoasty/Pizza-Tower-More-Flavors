@@ -74,7 +74,7 @@
           "parameters": [
             "",
             "60",
-            "\"PlayerClothesPattern\"",
+            "\"Clothes Pattern\"",
             ""
           ]
         },
@@ -96,7 +96,7 @@
           "parameters": [
             "",
             "",
-            "\"PlayerClothesPattern\"",
+            "\"Clothes Pattern\"",
             ""
           ]
         },
@@ -126,72 +126,6 @@
             "",
             "",
             "no",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color1\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color2\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color3\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color4\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color5\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "player",
-            "Effect",
-            "\"Color6\"",
             ""
           ]
         }
@@ -343,12 +277,10 @@
           "conditions": [
             {
               "type": {
-                "value": "BooleanVariable"
+                "value": "Visible"
               },
               "parameters": [
-                "Debug",
-                "True",
-                "="
+                "player"
               ]
             },
             {
@@ -356,6 +288,16 @@
                 "value": "BuiltinCommonInstructions::Once"
               },
               "parameters": []
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Debug",
+                "True",
+                "="
+              ]
             }
           ],
           "actions": [
@@ -429,6 +371,12 @@
           "conditions": [
             {
               "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
                 "value": "BooleanVariable"
               },
               "parameters": [
@@ -436,12 +384,6 @@
                 "False",
                 "="
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
@@ -551,7 +493,7 @@
                 "PlayerVerticalSpeed",
                 "Text",
                 "=",
-                "\"vspeed: \" + ToString(round((player.PlatformerObject::CurrentFallSpeed()-player.PlatformerObject::CurrentJumpSpeed())/60))"
+                "\"vspeed: \" + ToString(player.vSpeed)"
               ]
             }
           ],

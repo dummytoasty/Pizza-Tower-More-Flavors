@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 220,
+    "build": 221,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -13100,6 +13100,34 @@
         "name": "spr_taunteffect_8.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "spr_slope2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "spr_slope2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "wow_2.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "wow_2.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "../../../PizzaTower/PT dans GDevelop/SFXs/sfx_taunt.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "..\\..\\..\\PizzaTower\\PT dans GDevelop\\SFXs\\sfx_taunt.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -13257,7 +13285,7 @@
           "folded": true,
           "name": "Character",
           "type": "string",
-          "value": "peppino"
+          "value": "noise"
         },
         {
           "folded": true,
@@ -13412,7 +13440,7 @@
                     {
                       "name": "toggle",
                       "type": "boolean",
-                      "value": true
+                      "value": false
                     }
                   ]
                 },
@@ -13454,9 +13482,14 @@
                     {
                       "name": "toggle",
                       "type": "boolean",
-                      "value": false
+                      "value": true
                     }
                   ]
+                },
+                {
+                  "name": "cancel",
+                  "type": "boolean",
+                  "value": false
                 },
                 {
                   "name": "duration",
@@ -13540,81 +13573,54 @@
           "name": "canUppercut",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "isOnFloor",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "goLeft",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "goRight",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "colOnLeft",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "colOnRight",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "colOnTop",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "jumpSpeed",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "fallLimit",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "pattern",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [
-        {
-          "effectType": "ColorReplace",
-          "name": "Color1",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "234;1;253",
-            "originalColor": "255;255;64"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "ColorReplace",
-          "name": "Color2",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "0;0;254",
-            "originalColor": "255;64;255"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "ColorReplace",
-          "name": "Color3",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "234;1;253",
-            "originalColor": "64;255;255"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "ColorReplace",
-          "name": "Color4",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "252;0;0",
-            "originalColor": "64;64;255"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "ColorReplace",
-          "name": "Color5",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "255;255;255",
-            "originalColor": "64;255;64"
-          },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "ColorReplace",
-          "name": "Color6",
-          "doubleParameters": {
-            "epsilon": 0
-          },
-          "stringParameters": {
-            "newColor": "255;255;255",
-            "originalColor": "255;64;64"
-          },
-          "booleanParameters": {}
-        },
         {
           "effectType": "Brightness",
           "name": "Shadow",
@@ -13631,26 +13637,6 @@
           "type": "Multiplayer::MultiplayerObjectBehavior",
           "playerNumber": 0,
           "actionOnPlayerDisconnect": "DestroyObject"
-        },
-        {
-          "name": "PlatformerObject",
-          "type": "PlatformBehavior::PlatformerObjectBehavior",
-          "gravity": 1800,
-          "jumpSpeed": 630,
-          "maxFallingSpeed": 1200,
-          "acceleration": 0,
-          "deceleration": 0,
-          "jumpSustainTime": 999999,
-          "ladderClimbingSpeed": 150,
-          "maxSpeed": 999999,
-          "canGoDownFromJumpthru": false,
-          "ignoreDefaultControls": true,
-          "canGrabPlatforms": false,
-          "canGrabWithoutMoving": true,
-          "slopeMaxAngle": 60,
-          "useLegacyTrajectory": false,
-          "xGrabTolerance": 10,
-          "yGrabOffset": 0
         }
       ],
       "animations": [
@@ -37369,12 +37355,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37386,12 +37391,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37403,12 +37427,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37420,12 +37463,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37437,12 +37499,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37454,12 +37535,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37471,12 +37571,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37488,12 +37607,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37505,12 +37643,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37522,12 +37679,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 },
                 {
                   "hasCustomCollisionMask": true,
@@ -37539,12 +37715,31 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 50,
+                    "y": 80
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 37,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 52
+                      },
+                      {
+                        "x": 63,
+                        "y": 96
+                      },
+                      {
+                        "x": 37,
+                        "y": 96
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -50434,7 +50629,38 @@
       "name": "solid",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "playerOnTop",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnLeft",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnRight",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnBottom",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerXIsAbove",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "playerYIsAbove",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -50502,7 +50728,38 @@
       "name": "slope",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "playerOnTop",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnLeft",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnRight",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerOnBottom",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "playerXIsAbove",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "playerYIsAbove",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -50540,6 +50797,10 @@
                   "customCollisionMask": [
                     [
                       {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
                         "x": 32,
                         "y": 0
                       },
@@ -50561,12 +50822,18 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "platform",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "playerIsAbove",
+          "type": "boolean",
+          "value": false
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -50613,11 +50880,11 @@
                       },
                       {
                         "x": 32,
-                        "y": 31
+                        "y": 32
                       },
                       {
                         "x": 0,
-                        "y": 31
+                        "y": 32
                       }
                     ]
                   ]
@@ -50822,7 +51089,28 @@
       "texture": "spr_peppattern6.png",
       "type": "TiledSpriteObject::TiledSprite",
       "width": 24,
-      "variables": [],
+      "variables": [
+        {
+          "name": "animIndex",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "animSpeed",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "flip",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "frame",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": []
     },
@@ -50927,40 +51215,411 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "TauntEffect",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "spr_taunteffect",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.05,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "spr_taunteffect_8.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 31,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 48
+                      },
+                      {
+                        "x": 109,
+                        "y": 125
+                      },
+                      {
+                        "x": 31,
+                        "y": 125
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
+        "folderName": "Collisions",
+        "children": [
+          {
+            "folderName": "Squares",
+            "children": [
+              {
+                "objectName": "solid"
+              }
+            ]
+          },
+          {
+            "folderName": "Triangles",
+            "children": [
+              {
+                "objectName": "slope"
+              }
+            ]
+          },
+          {
+            "objectName": "platform"
+          }
+        ]
+      },
+      {
         "objectName": "player"
-      },
-      {
-        "objectName": "solid"
-      },
-      {
-        "objectName": "slope"
-      },
-      {
-        "objectName": "platform"
       },
       {
         "objectName": "startgate"
       },
       {
+        "objectName": "TauntEffect"
+      },
+      {
         "objectName": "ClothesPattern"
       },
       {
-        "objectName": "ConsoleBG"
-      },
-      {
-        "objectName": "PlayerState"
-      },
-      {
-        "objectName": "PlayerHorizontalSpeed"
-      },
-      {
-        "objectName": "PlayerVerticalSpeed"
+        "folderName": "Debug",
+        "children": [
+          {
+            "objectName": "ConsoleBG"
+          },
+          {
+            "objectName": "PlayerState"
+          },
+          {
+            "objectName": "PlayerHorizontalSpeed"
+          },
+          {
+            "objectName": "PlayerVerticalSpeed"
+          }
+        ]
       }
     ]
   },
@@ -50997,10 +51656,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/rework-test"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/untitled-scene2"
     }
   ],
   "externalEvents": [
@@ -51049,10 +51704,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/shakeobject"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/pointbetween"
     }
   ],
   "externalLayouts": [],
